@@ -1,0 +1,30 @@
+.fullScreenCard {
+    margin:24px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardContent {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.cardText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.fullScreenCard:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.cardContent:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease-in-out;
+}
