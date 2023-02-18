@@ -1,11 +1,8 @@
-import styles from "./Home.module.css";
-
 import React from "react";
-import { useEffect } from "react";
-import useApp from "../../Hooks/useApp";
 import FullScreenCard from "../FullScreenCard";
 import { useNavigate } from "react-router-dom";
 import { useStoreProvider } from "../../Store/store";
+import "./Home.css";
 
 function Home() {
   const { apps } = useStoreProvider();

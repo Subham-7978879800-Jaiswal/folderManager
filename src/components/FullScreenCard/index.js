@@ -1,10 +1,10 @@
-import styles from "./FullScreenCard.module.css";
+import "./FullScreenCard.css";
 
 function FullScreenCard(props) {
   return (
-    <div className={styles.fullScreenCard}>
-      <div className={styles.cardContent}>
-        <div className={styles.cardText}>{props.children}</div>
+    <div className={"fullScreenCard"}>
+      <div className={"cardContent"}>
+        <div className={"cardText"}>{props.children}</div>
       </div>
     </div>
   );
