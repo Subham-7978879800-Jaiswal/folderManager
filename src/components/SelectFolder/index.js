@@ -3,10 +3,6 @@ import useFolderTree from "../../Hooks/useFolderTree";
 import "../../global.css";
 import FolderView from "../FolderView";
 
-const style = {
-  width: window.innerWidth - 400,
-};
-
 const SelectFolder = () => {
   const { getFolderTreeServiceCall, folderTree } = useFolderTree();
 
@@ -14,12 +10,7 @@ const SelectFolder = () => {
     getFolderTreeServiceCall();
   }, []);
 
-  return (
-    <div style={style}>
-      {folderTree && <FolderView data={folderTree}></FolderView>}
-      <button>Restrict Folder</button>
-    </div>
-  );
+  return <div>{folderTree && <FolderView data={folderTree}></FolderView>}</div>;
 };
 
 export default SelectFolder;
