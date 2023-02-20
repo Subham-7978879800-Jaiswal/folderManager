@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
+import { useStoreProvider } from "../Store/store";
 
 const useFolderTree = () => {
   const [folderTree, setFolderTree] = useState();
+  const { updateLoaderOnFolderDetailLoad } = useStoreProvider();
 
   const recursivelyStoreAllFiles = async (data) => {
     await data.forEach(async (obj) => {
@@ -35,8 +37,11 @@ const useFolderTree = () => {
     tree = tree.flat(1);
 
     const fresult = await getRootFiles(tree);
-
-    setTimeout(() => setFolderTree(fresult), 1500);
+    updateLoaderOnFolderDetailLoad(true);
+    setTimeout(() => {
+      setFolderTree(fresult);
+      updateLoaderOnFolderDetailLoad(false);
+    }, 10000);
   };
 
   return {

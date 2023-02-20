@@ -1,5 +1,6 @@
 import { FiChevronDown } from "react-icons/fi";
 import Form from "react-bootstrap/Form";
+import { useStoreProvider } from "../../../Store/store";
 
 export const RecursivelyGenerateElementTree = ({ data, i, rawData }) => {
   const clickhandler = (obj) => {
@@ -29,6 +30,10 @@ export const RecursivelyGenerateElementTree = ({ data, i, rawData }) => {
       chevron.add("down-chevron");
     }
   };
+
+  const { filterExtensions } = useStoreProvider();
+
+  console.log(filterExtensions);
 
   return data.map((obj) => {
     return (
@@ -71,7 +76,16 @@ export const RecursivelyGenerateElementTree = ({ data, i, rawData }) => {
         )}
 
         {obj?.children === undefined && (
-          <div style={{ backgroundColor: "green" }} className="card">
+          <div
+            style={{
+              backgroundColor: `${
+                filterExtensions.includes(obj?.name?.split(".")[1])
+                  ? "yellow"
+                  : ""
+              }`,
+            }}
+            className="card"
+          >
             {obj.name}
           </div>
         )}
