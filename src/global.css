@@ -1,7 +1,3 @@
 .CheckBox{
     display: inline-block;
 }
-
-.iconContainer.TreeNodeToolBar .EditIcon,.iconContainer.TreeNodeToolBar .AddFileIcon,.iconContainer.TreeNodeToolBar .AddFolderIcon  {
-    display: none;
-}

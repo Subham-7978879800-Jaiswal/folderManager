@@ -36,7 +36,7 @@ const useFolderTree = () => {
 
     const fresult = await getRootFiles(tree);
 
-    setTimeout(() => setFolderTree(fresult), 2000);
+    setTimeout(() => setFolderTree(fresult), 1500);
   };
 
   return {

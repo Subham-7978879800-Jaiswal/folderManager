@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 function Example({ setter }) {
+  // * TODO MAKE IT REUSABLE FOR OTHER USE CASE AS WELL
   return (
     <>
       <Modal show={true} animation={false} onHide={() => setter(false)}>
