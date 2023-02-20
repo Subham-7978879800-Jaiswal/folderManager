@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FolderManager.css";
-
-import SelectFolder from "../SelectFolder";
+import "../../global.css";
+import useFolderTree from "../../Hooks/useFolderTree";
+import FolderView from "../FolderView";
 
 function FolderManager() {
-  return (
-    <div>
-      <SelectFolder />
-    </div>
-  );
+  const { getFolderTreeServiceCall, folderTree } = useFolderTree();
+
+  useEffect(() => {
+    getFolderTreeServiceCall();
+  }, []);
+
+  return <div>{folderTree && <FolderView data={folderTree}></FolderView>}</div>;
 }
 
 export default FolderManager;

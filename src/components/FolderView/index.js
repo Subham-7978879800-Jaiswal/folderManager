@@ -1,6 +1,6 @@
 import "./FolderView.css";
 import { useMemo, useState } from "react";
-import RecursivelyGenerateElementTree from "./RecursivelyGenerateElementTree";
+import RecursivelyGenerateElementTree from "./RecursivelyGenerateElemenTree";
 import { Button } from "react-bootstrap";
 import Example from "../Modal";
 import FilterDropDown from "../FilterDropDown";
@@ -30,7 +30,6 @@ const FolderView = ({ data }) => {
           }
         });
         if (res === false) {
-          console.log(jstParent);
           jstParent.show = false;
         } else {
           jstParent.show = true;

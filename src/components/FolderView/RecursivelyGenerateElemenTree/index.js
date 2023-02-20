@@ -1,7 +1,7 @@
 import { FiChevronDown } from "react-icons/fi";
 import Form from "react-bootstrap/Form";
 
-const RecursivelyGenerateElementTree = ({ data, i, rawData }) => {
+export const RecursivelyGenerateElementTree = ({ data, i, rawData }) => {
   const clickhandler = (obj) => {
     const textSelector = `#id_${obj.currentTarget.children[0].children[1].textContent.replace(
       /\s/g,
@@ -33,7 +33,7 @@ const RecursivelyGenerateElementTree = ({ data, i, rawData }) => {
   return data.map((obj) => {
     return (
       <div key={obj.virtual_id} style={{ marginLeft: `${50 * i}px` }}>
-        {obj?.children?.length > 0 && (obj.show || obj.show === undefined) && (
+        {obj?.children?.length >= 0 && (obj.show || obj.show === undefined) && (
           <>
             <div onClick={clickhandler} className="card">
               <div>
@@ -70,8 +70,13 @@ const RecursivelyGenerateElementTree = ({ data, i, rawData }) => {
           </>
         )}
 
-        {obj?.children === undefined && <div className="card">{obj.name}</div>}
+        {obj?.children === undefined && (
+          <div style={{ backgroundColor: "green" }} className="card">
+            {obj.name}
+          </div>
+        )}
       </div>
     );
   });
 };
+export default RecursivelyGenerateElementTree;
