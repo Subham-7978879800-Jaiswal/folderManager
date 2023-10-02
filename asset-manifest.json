@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/folderManager/static/css/main.2a8d6c35.css",
+    "main.js": "/folderManager/static/js/main.b6f4f363.js",
+    "index.html": "/folderManager/index.html",
+    "main.2a8d6c35.css.map": "/folderManager/static/css/main.2a8d6c35.css.map",
+    "main.b6f4f363.js.map": "/folderManager/static/js/main.b6f4f363.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2a8d6c35.css",
+    "static/js/main.b6f4f363.js"
+  ]
+}
